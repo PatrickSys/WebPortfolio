@@ -1,0 +1,60 @@
+<div class="wrapper">
+    <div class="introducer animate__animated animate__fadeInDown animation-1">Hello World!</div>
+    <div class="pre-title animate__animated animate__fadeInLeft animation-3"  >I am</div>
+    <h1 #asTitle class="title animate__animated animate__fadeInUp animation-2" ></h1>
+    <h2 class="sub-title animate__animated animate__fadeInUp animation-10">I'm a Software Developer</h2>
+    <h4 class="in-progress animate__animated animate__fadeInLeft animation-14">-In Progress-</h4>
+     <p class="description animate__animated animate__fadeInUp animation-17">
+       Jack of all trades, master of none, I'm on my way to become a developer and be the best version of myself.
+          <br>
+          I'm mainly focused on learning Java as it's been the first programming language I've learned.
+          <br>
+          But as you can clearly see, I also love developing web pages with Html, Css and JS (TS/Angular this time!).
+          <br>
+          I'm also interested and learning almost daily Python, as it's said it's a "beginner-friendly" programming language but no less powerful.
+          <br>
+          I'm currently studying 1st of DAM at the CIDE, where I have learned most things I actually know.
+          <br>
+          Here I'm learning languages such as XML or SQL in addition of the previously said. 
+          <br>
+          But let's be honest, we all know that what differentiates a boring and usual schooling from knowing you have chosen well
+          is the fact that you would do it on your spare time, every day, stress from it, and still have that desire to learn more.
+          <br>
+        </p> 
+
+        <h3 class="animate__animated animate__fadeInUp animation-20">
+        Do what you love, and you’ll never work another day in your life.
+        </h3>
+        <h4 class="wise-man animate__animated animate__fadeInLeft animation-20">-As a wise man once said-</h4>
+    
+        <p class="description animate__animated animate__fadeInUp animation-17">
+        I am not a ‘wise man,’ nor . . . shall I ever be.
+        <br>
+        But I am quite sure that programming is my path.
+        <br>
+        I really enjoy it, as I also enjoy working with systems such as Ubuntu, Kali Linux, Arch Linux or Raspbian (this website is hosted on my raspberry!).
+        <br>
+        You may already be wondering what I have achieved and, if I have to take a good look at myself, I haven't done much (yet).
+        <br>
+        But briefly to conclude you will find my social networks below, and my projects at the right side. Keep an eye on it, I will keep updating it!.
+        </p>
+      </div>
+
+        <div class="link-wrapper description animate__animated animate__fadeInUp animation-17">
+
+          <hr class="line">
+          <div class="links d-flex flex-wrap">
+          <div class="block col-12 col-lg-4" *ngFor="let linkObj of links">
+            <a [href]="linkObj.link" target="blank">
+              <div class=block-in>
+               <span [innerHTML]="linkObj.icon"></span>
+
+              </div>
+            </a>
+
+          </div>
+
+          </div>
+        </div>
+
+

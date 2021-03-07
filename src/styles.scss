@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+
+
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    font-family: 'Cabin', sans-serif;
+    background: linear-gradient(rgb(255 255 255 / 76%), #0400ff8c), url('assets/background-1.jfif');
+    
+    
+    
+}
+
+h1, h2{
+    margin: 0;
+}
+
+a, a:visited, a:hover, a:link{
+    color: #000000
+}
+@for $i from 1 through 100 {
+    .animation-#{$i}{
+        animation-delay: #{$i /10}s;
+    }
+}
