@@ -6,12 +6,20 @@
                     <div class="top">
                     <div class="date" >{{item.created_at |date}}</div>
                     <div class="title">{{item.name}}</div>
-                    <div class="description">{{item.description}}</div>                    </div>
-                   
-                    <div class="bottom">
-                        
+                    <div class="description">{{item.description}}</div></div>
+
+                    <div class="preview" (click)='openNewTab(item.img)' *ngIf="item.id!==310342689"> 
+                    <div class="top">Quick preview </div>
+                        <img src={{item.img}}>
+                        <span class="previewFooter">Click on image to see it full resolution</span>
                     </div>
+
+                    <div class="noPreview" *ngIf="item.id==310342689"> 
+                        <div> No previews available yet! </div>
+                    </div>
+
                 </div>
+
                 <div class="right d-flex">
                     <div class="top">
                         <a [href]="item.html_url" target="_blank"><i class="uil uil-github"></i></a>
