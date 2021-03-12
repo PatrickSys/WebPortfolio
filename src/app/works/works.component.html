@@ -3,15 +3,19 @@
         <div class="block-repo animate__animated animate__fadeInUp animation-{{i*2}} col-12 col-sm-12 col-md-12 col-lg-4" *ngFor="let item of repos; let i = index">
             <div class="block-repo-in d-flex">
                 <div class="left d-flex">
-                    <div class="top">
+                    <div >
                     <div class="date" >{{item.created_at |date}}</div>
                     <div class="title">{{item.name}}</div>
                     <div class="description">{{item.description}}</div></div>
 
-                    <div class="preview" (click)='openNewTab(item.img)' *ngIf="item.id!==310342689"> 
-                    <div class="top">Quick preview </div>
-                        <img src={{item.img}}>
-                        <span class="previewFooter">Click on image to see it full resolution</span>
+                    <div class="preview" *ngIf="item.id!==310342689"> 
+                     <div>Quick preview </div>
+                        <video (click)="playVideo($event)">
+
+                            <source src="{{item.preview}}" type="video/mp4">
+
+                        </video>
+                        <span class="previewFooter">Click on video to play</span>
                     </div>
 
                     <div class="noPreview" *ngIf="item.id==310342689"> 
@@ -27,7 +31,6 @@
                     </div>
                     <div class="bottom">
                         <a [href]="item.homepage" target="_blank" *ngIf="item.homepage"><i class="uil uil-external-link-alt" ></i></a>
-                        
                     </div>
                 </div>
             </div>

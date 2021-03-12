@@ -9,7 +9,7 @@ import { GithubService } from '../github.service';
 export class WorksComponent implements OnInit {
   repos: any;
   config: any;
-  images: String[] = ["null", "assets/pongImg.png","assets/todoImg.png" ]
+  previews: String[] = ["null", "assets/pongPreview.mp4","assets/todoPreview.mp4" ]
   expandedImg: false;
 
   constructor(private gitHubService: GithubService) { 
@@ -28,14 +28,16 @@ export class WorksComponent implements OnInit {
   addImg(): void{
 
     for (let i=0; i<this.repos.length; i++){
-      this.repos[i].img = this.images[i]
-      console.log(this.repos[i].img)
+      this.repos[i].preview = this.previews[i]
+      console.log(this.repos[i].preview)
 
     }
     
   }
-  public openNewTab(url: string) {
-    window.open(url, '_blank');
-  }
 
+
+
+  playVideo(event) {
+    event.toElement.play()
+ }
 }
