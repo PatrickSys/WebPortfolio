@@ -9,7 +9,6 @@ import { GithubService } from '../github.service';
 export class WorksComponent implements OnInit {
   repos: any;
   config: any;
-  previews: String[] = ["null", "assets/pongPreview.mp4","assets/todoPreview.mp4" ]
   expandedImg: false;
 
   constructor(private gitHubService: GithubService) { 
@@ -20,24 +19,30 @@ export class WorksComponent implements OnInit {
   ngOnInit(): void {
     this.gitHubService.loadRepos().subscribe(res=>{
       this.repos = res;
-      this.addImg();
+      this.addPreviews();
     })
 
   }
 
-  addImg(): void{
+  addPreviews(): void{
 
     for (let i=0; i<this.repos.length; i++){
-      this.repos[i].preview = this.previews[i]
-      console.log(this.repos[i].preview)
+      if (this.repos[i].name === "RetroPong"){
+        this.repos[i].preview = "assets/pongPreview.mp4"
+      }
 
-    }
+      if (this.repos[i].name === "ToDo"){
+        this.repos[i].preview = "assets/todoPreview.mp4"
+      
+      }
+      
+
+    } 
     
   }
 
 
-
   playVideo(event) {
-    event.toElement.play()
+    event.target.play()
  }
 }

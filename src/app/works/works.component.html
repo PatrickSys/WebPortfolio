@@ -8,7 +8,7 @@
                     <div class="title">{{item.name}}</div>
                     <div class="description">{{item.description}}</div></div>
 
-                    <div class="preview" *ngIf="item.id!==310342689"> 
+                    <div class="preview" *ngIf="item.preview"> 
                      <div>Quick preview </div>
                         <video (click)="playVideo($event)">
 
@@ -18,7 +18,7 @@
                         <span class="previewFooter">Click on video to play</span>
                     </div>
 
-                    <div class="noPreview" *ngIf="item.id==310342689"> 
+                    <div class="noPreview" *ngIf="!item.preview"> 
                         <div> No previews available yet! </div>
                     </div>
 
